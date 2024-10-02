@@ -11,23 +11,26 @@ pipeline {
 
         stage('Compile') {
             steps {
-                // Compile the Java source files
-                echo 'Running the JavaCalculator...'
-                bat 'mvn exec:java -Dexec.mainClass="JavaCalculator"'
+                // Navigate to the correct directory where pom.xml is located and compile
+                dir('CEN4802c-MidtermRepository') {
+                    echo 'Running the JavaCalculator...'
+                    bat 'mvn clean compile'
+                }
             }
         }
 
         stage('Run') {
             steps {
-                // Run the compiled Java program (adjust according to your main class)
-                bat 'java -cp bin JavaCalculator'  // Replace with your actual classpath and main class
+                // Run the compiled Java program
+                dir('CEN4802c-MidtermRepository') {
+                    bat 'mvn exec:java -Dexec.mainClass="JavaCalculator"'
+                }
             }
         }
     }
 
     post {
         always {
-            // Optional: You can add any cleanup or notification steps here
             echo 'Pipeline execution completed.'
         }
         success {
