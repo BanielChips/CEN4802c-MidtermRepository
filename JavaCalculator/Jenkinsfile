@@ -21,7 +21,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Change to the directory containing your pom.xml
-                dir('CEN4802c-MidtermRepository') {
+                dir('CEN4802c-MidtermProject/JavaCalculator') {
                 echo 'Building...'
                     // Run Maven command to build the project
                     bat 'mvn clean install'
