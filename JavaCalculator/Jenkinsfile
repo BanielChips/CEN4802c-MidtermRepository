@@ -13,7 +13,8 @@ pipeline {
             steps {
                 // Compile the Java source files
                 echo 'Running the JavaCalculator...'
-                sh 'javac -d bin src/main/java/JavaCalculator.java'
+//                 sh 'javac -d bin src/main/java/JavaCalculator.java'
+                sh 'mvn exec:java -Dexec.mainClass="JavaCalculator"'
             }
         }
 
