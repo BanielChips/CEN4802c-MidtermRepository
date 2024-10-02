@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone repository') {
+            steps {
+                // Pull the code from your version control system (e.g., Git)
+                git 'https://github.com/BanielChips/CEN4802c-MidtermRepository.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                // Compile the Java source files
+                sh 'javac -d bin src/*.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                // Run the compiled Java program (adjust according to your main class)
+                sh 'java -cp bin JavaCalculator'  // Replace MainClassName with your actual main class
+            }
+        }
+
+//         stage('Deploy') {
+//             steps {
+//                 // If needed, you can copy the source code or compiled files to the staging server
+//                 sh 'scp -r src/ user@staging-server:/path/to/deployment/'
+//             }
+//         }
+    }
+
+    post {
+        always {
+            // Optional: You can add any cleanup or notification steps here
+            echo 'Pipeline execution completed.'
+        }
+        success {
+            echo 'Build and Run succeeded!'
+        }
+        failure {
+            echo 'Build or Run failed.'
+        }
+    }
+}
