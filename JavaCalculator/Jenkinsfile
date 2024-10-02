@@ -32,7 +32,7 @@ pipeline {
         stage('Run') {
             steps {
                 // Run the compiled Java program
-                dir('CEN4802c-MidtermRepository/src/java/*.java') {
+                dir('CEN4802c-MidtermRepository') {
                     bat 'mvn exec:java -Dexec.mainClass="JavaCalculator"'
                 }
             }
