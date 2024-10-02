@@ -12,7 +12,7 @@ pipeline {
         stage('Compile') {
             steps {
                 // Navigate to the correct directory where pom.xml is located and compile
-                dir('CEN4802c-MidtermRepository/JavaCalculator') {
+                dir('CEN4802c-MidtermProject/JavaCalculator') {
                     echo 'Compiling...'
                     bat 'mvn clean compile'
                 }
@@ -24,7 +24,6 @@ pipeline {
                 // Change to the directory containing your pom.xml
                 dir('CEN4802c-MidtermRepository') {
                 echo 'Building...'
-                echo WORKSPACE
                     // Run Maven command to build the project
                     bat 'mvn clean install'
                 }
