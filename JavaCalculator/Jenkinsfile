@@ -12,7 +12,7 @@ pipeline {
         stage('Compile') {
             steps {
                 // Compile the Java source files
-                sh 'javac -d bin src/*.java'
+                sh 'javac -d bin src/main/java/*.java'
             }
         }
 
