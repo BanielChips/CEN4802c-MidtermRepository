@@ -13,24 +13,16 @@ pipeline {
             steps {
                 // Compile the Java source files
                 echo 'Running the JavaCalculator...'
-//                 sh 'javac -d bin src/main/java/JavaCalculator.java'
-                sh 'mvn exec:java -Dexec.mainClass="JavaCalculator"'
+                bat 'mvn exec:java -Dexec.mainClass="JavaCalculator"'
             }
         }
 
         stage('Run') {
             steps {
                 // Run the compiled Java program (adjust according to your main class)
-                sh 'java -cp bin JavaCalculator'  // Replace MainClassName with your actual main class
+                bat 'java -cp bin JavaCalculator'  // Replace with your actual classpath and main class
             }
         }
-
-//         stage('Deploy') {
-//             steps {
-//                 // If needed, you can copy the source code or compiled files to the staging server
-//                 sh 'scp -r src/ user@staging-server:/path/to/deployment/'
-//             }
-//         }
     }
 
     post {
