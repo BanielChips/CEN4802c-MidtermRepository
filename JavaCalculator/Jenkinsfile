@@ -12,7 +12,7 @@ pipeline {
         stage('Compile') {
             steps {
                 // Navigate to the correct directory where pom.xml is located and compile
-                dir('CEN4802c-MidtermRepository') {
+                dir('CEN4802c-MidtermRepository/JavaCalculator') {
                     echo 'Compiling...'
                     bat 'mvn clean compile'
                 }
