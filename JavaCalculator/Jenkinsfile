@@ -14,11 +14,6 @@ pipeline {
                 // Compile the Java source files
                 echo 'Running the JavaCalculator...'
                 sh 'javac -d bin src/main/java/JavaCalculator.java'
-                if (compileResult != 0) {
-                    error('Compilation failed!')
-                } else {
-                    echo 'Compilation succeeded!'
-                }
             }
         }
 
