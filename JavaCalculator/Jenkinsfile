@@ -11,10 +11,13 @@ pipeline {
 
         stage('Compile') {
             steps {
-                // Navigate to the correct directory where pom.xml is located and compile
-                echo 'Compiling...'
-                // Run Maven command to compile the project in the workspace
-                bat 'mvn clean compile'
+                dir('JavaCalculator'){
+                    // Navigate to the correct directory where pom.xml is located and compile
+                    echo 'Compiling...'
+                    // Run Maven command to compile the project in the workspace
+                    bat 'mvn clean compile'
+                }
+
             }
         }
 
