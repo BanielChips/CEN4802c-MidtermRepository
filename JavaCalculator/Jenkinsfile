@@ -24,6 +24,7 @@ pipeline {
         stage('Run') {
             steps {
                 // Run the compiled Java program
+                echo 'Running...'
                 dir('JavaCalculator') {
                     bat 'mvn exec:java -Dexec.mainClass="JavaCalculator"'
                 }
