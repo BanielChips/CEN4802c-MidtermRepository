@@ -1,0 +1,25 @@
+# Use the official Maven image for building the application
+FROM maven:3.8.4-openjdk-21 AS build
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the pom.xml and install dependencies
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# Use a smaller image for running the application
+FROM openjdk:21-jdk-slim
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the jar file from the build stage
+COPY --from=build /usr/src/app/target/myapp.jar .
+
+# Expose the application port
+EXPOSE 8080
+
+# Command to run the application
+CMD ["java", "-jar", "myapp.jar"]
