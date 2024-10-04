@@ -1,5 +1,5 @@
 # Use the official Maven image for building the application
-FROM maven:3.8.4-openjdk-21 AS build
+FROM maven:3.8.4-openjdk-21-slim AS build
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -16,7 +16,8 @@ FROM openjdk:21-jdk-slim
 WORKDIR /usr/src/app
 
 # Copy the jar file from the build stage
-COPY --from=build /usr/src/app/target/myapp.jar .
+COPY --from=build /usr/src/app/target/JavaCalculator-1.0-SNAPSHOT.jar .
+
 
 # Expose the application port
 EXPOSE 8080
