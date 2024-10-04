@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker image...'
-                    bat 'docker run --rm -p 8081:8080 my-maven-app'
+                    bat 'docker build -t my-maven-app -f JavaCalculator\\Dockerfile JavaCalculator'
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running application...'
-                    bat 'docker run --rm -p 8081:8080 my-maven-app mvn exec:java -Dexec.mainClass="JavaCalculator.MainClass"' // Adjust MainClass as needed
+                    bat 'docker run --rm -p 8081:8080 my-maven-app java -cp /usr/src/app JavaCalculator.MainClass'
                 }
             }
         }
