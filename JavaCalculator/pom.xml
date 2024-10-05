@@ -31,6 +31,9 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
+                    <addClasspath>true</addClasspath>
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <mainClass>com.mypackage.javaCalculator</mainClass>
                 </configuration>
             </plugin>
 
