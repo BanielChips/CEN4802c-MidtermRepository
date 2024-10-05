@@ -39,7 +39,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>JavaCalculator.JavaCalculator</mainClass>
+                    <mainClass>src/main/java/JavaCalculator.java</mainClass>
                 </configuration>
             </plugin>
         </plugins>
