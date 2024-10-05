@@ -17,14 +17,6 @@ pipeline {
             }
         }
     }
-//         stage('Run Tests') {
-//             steps {
-//                 script {
-//                     echo 'Running tests...'
-//                     bat 'docker run --rm my-maven-app mvn test'
-//                 }
-//             }
-//         }
 
     stage('Run Application') {
         steps {
