@@ -1,5 +1,5 @@
 
-FROM maven:3.9-eclipse-temurin-21 AS build
+FROM maven:3.9.9-eclipse-temurin-11 AS build
 
 
 WORKDIR /usr/src/app
@@ -12,7 +12,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 
-FROM eclipse-temurin:21-jdk-slim
+FROM eclipse-temurin:11-jdk-slim
 
 
 WORKDIR /usr/src/app
