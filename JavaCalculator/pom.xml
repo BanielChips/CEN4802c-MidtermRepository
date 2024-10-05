@@ -33,7 +33,7 @@
                     <target>21</target>
                     <addClasspath>true</addClasspath>
                     <classpathPrefix>lib/</classpathPrefix>
-                    <mainClass>com.mypackage.javaCalculator</mainClass>
+                    <mainClass>javaCalculator</mainClass>
                 </configuration>
             </plugin>
 
