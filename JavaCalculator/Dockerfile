@@ -11,8 +11,8 @@ FROM eclipse-temurin:21
 
 WORKDIR /usr/src/app
 
-COPY --from=build /usr/src/app/target/JavaCalculator.jar .
+COPY --from=build /usr/src/app/target/JavaCalculator-1.0-SNAPSHOT.jar .
 
 EXPOSE 8081
 
-CMD ["java", "-jar", "JavaCalculator-.jar"]
+CMD ["java", "-jar", "JavaCalculator-1.0-SNAPSHOT.jar"]
