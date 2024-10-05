@@ -26,14 +26,15 @@ pipeline {
 //             }
 //         }
 
-        stage('Run Application') {
-            steps {
-                script {
-                    echo 'Running application...'
-                    bat 'docker run --rm -p 8081:8080 my-maven-app java -cp /usr/src/app JavaCalculator.MainClass'
-                }
-            }
+stage('Run Application') {
+    steps {
+        script {
+            echo 'Running application...'
+            bat 'docker run --rm -p 8081:8080 -v "C:\\Users\\danie\\Desktop\\School\\Fall 2024\\Software Integration - CEN4802C\\Midterm Project\\CEN-4802C-Build\\JavaCalculator\\src\\main\\java:/usr/src/app/src/main/java" my-maven-app java -cp /usr/src/app/src/main/java JavaCalculator.MainClass'
         }
+    }
+}
+
     }
 
     post {
