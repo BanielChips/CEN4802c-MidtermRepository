@@ -12,7 +12,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 
-FROM eclipse-temurin:11-jdk-slim
+FROM eclipse-temurin:11-jre-slim
 
 
 WORKDIR /usr/src/app
