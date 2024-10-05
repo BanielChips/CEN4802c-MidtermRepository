@@ -26,23 +26,13 @@ pipeline {
 //             }
 //         }
 
-stage('Run Application') {
-    steps {
-        script {
-            echo 'Running application...'
-            stage('Run Application') {
-                steps {
-                    script {
-                        echo 'Running application...'
-                        bat 'docker run --rm -p 8081:8081 my-maven-app'
-                    }
-                }
+    stage('Run Application') {
+        steps {
+            script {
+                echo 'Running application...'
+                bat 'docker run --rm -p 8081:8081 my-maven-app'
             }
-
         }
-    }
-}
-
     }
 
     post {
