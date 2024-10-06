@@ -31,9 +31,6 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
-                    <addClasspath>true</addClasspath>
-                    <classpathPrefix>lib/</classpathPrefix>
-                    <mainClass>javaCalculator</mainClass>
                 </configuration>
             </plugin>
 
@@ -42,7 +39,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>src/main/java/JavaCalculator.java</mainClass>
+                    <mainClass>JavaCalculator.java</mainClass>
                 </configuration>
             </plugin>
         </plugins>
