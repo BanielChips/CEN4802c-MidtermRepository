@@ -85,5 +85,7 @@ public class JavaCalculator {
         System.out.println("Result Subtraction: 10 - 2 = " + subtraction);
         System.out.println("Result Multiplication: 10 * 2 = " + multiplication);
         System.out.println("Result Division: 10 / 2 = " + dividend);
+
+        System.out.println("This statement was added to show version control implementation.");
     }
 }
